@@ -1,11 +1,37 @@
 // Import stylesheets
 import './style.css';
 
-//EX1 console.log("Olá TypeScript!");
-for(let i = 0; i <= 10; i++){
-  console.log(i);
-};
+//console.log("Olá TypeScript!");
+/* for (let i = 0; i <= 10; i++) {
+  if(i % 2 == 0){
+    console.log(i + ' Par');  
+  }
+  else{
+    console.log(i + ' Impar');  
+  }
+} */
 
 // Write TypeScript code!
-const appDiv: HTMLElement = document.getElementById('app');
-appDiv.innerHTML = `<h1>Teste</h1>`;
+let title: string = 'MeuApp';
+
+let paragraph: string = 'Blablabla';
+
+const appTitle: HTMLElement = document.getElementById('app.title');
+appTitle.innerHTML = title;
+
+const appParagraph: HTMLElement = document.getElementById('app.paragraph');
+appParagraph.innerHTML = paragraph;
+
+let counter = 0;
+
+let intervalId = setInterval(() => {
+  counter++;
+  const appParagraph: HTMLElement = document.getElementById('app.counter');
+  appParagraph.innerHTML = counter + '';
+}, 1000);
+
+const btn = document.getElementById('app.btn');
+btn.addEventListener('click', alertMethod);
+function alertMethod(this: HTMLElement, ev: Event) {
+  alert('Alertando pelo TypeScript');
+}
