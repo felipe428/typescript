@@ -1,5 +1,8 @@
-// Import stylesheets
-import './style.css';
+import { Greeter } from './greeter';
+
+let greeter = new Greeter('Senhor');
+const appParagraph: HTMLElement = document.getElementById('app.paragraph');
+appParagraph.innerHTML = greeter.getGreeting();
 
 //console.log("Olá TypeScript!");
 /* for (let i = 0; i <= 10; i++) {
@@ -19,8 +22,8 @@ let paragraph: string = 'Blablabla';
 const appTitle: HTMLElement = document.getElementById('app.title');
 appTitle.innerHTML = title;
 
-const appParagraph: HTMLElement = document.getElementById('app.paragraph');
-appParagraph.innerHTML = paragraph;
+/*const appParagraph: HTMLElement = document.getElementById('app.paragraph');
+appParagraph.innerHTML = paragraph;*/
 
 let counter = 0;
 
@@ -33,5 +36,5 @@ let intervalId = setInterval(() => {
 const btn = document.getElementById('app.btn');
 btn.addEventListener('click', alertMethod);
 function alertMethod(this: HTMLElement, ev: Event) {
-  alert('Alertando pelo TypeScript');
+  alert('Alertando pelo typescript');
 }
